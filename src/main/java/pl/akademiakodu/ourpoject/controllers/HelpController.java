@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 public class HelpController {
 
-    //check if user exist (parameter 'name' - will be checking)
+    check if user exist (parameter 'name' - will be checking)
     @RequestMapping(path = "/userexist{name}", method = RequestMethod.GET)
     @ResponseBody
     public String userExist(@PathVariable("name") String name){

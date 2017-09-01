@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <form th:if="${message} == null" method="post" th:action="@{/form}">
+    <form th:if="${message} == null" method="post" th:action="@{/index} th:object="${message}>
         Name: <input type="text" th:name="name" placeholder="name" /> <p>
         Surname: <input type="text" th:name="surname" placeholder="surname" /> <p>
         Email: <input type="text" th:name="email" placeholder="email" /> <p>
