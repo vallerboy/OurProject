@@ -1,5 +1,10 @@
 package pl.akademiakodu.ourpoject.controllers;
 
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 public class HelpController {
 
     //check if user exist (parameter 'name' - will be checking)
