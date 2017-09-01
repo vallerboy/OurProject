@@ -2,6 +2,10 @@ package pl.akademiakodu.ourpoject.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
 public class HelpController {
 
     //check if user exist (parameter 'name' - will be checking)
@@ -17,9 +21,26 @@ public class HelpController {
 
     //method checking user exists?
     public static boolean isUserExist(String name){
-        //logic soon
+    File fileUsers = new File("resources/file.txt");
+
+    try {
+        for (String line: Files.readAllLines(fileUsers.toPath())){
+            String[] partLine = line.split(",");
+            for (String s : partLine) {
+                if (s.equals(name)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
         return false;
     }
 
-
 }
+
+
+
