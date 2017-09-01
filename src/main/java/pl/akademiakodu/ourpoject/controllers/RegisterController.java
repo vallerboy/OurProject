@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import pl.akademiakodu.ourpoject.models.UserModel;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,16 +24,16 @@ public class RegisterController {
     @RequestMapping(path="/register",method = RequestMethod.GET)
     public String form(Model datamodel){
 
-        datamodel.addAttribute("message",new PersonModel());
+        datamodel.addAttribute("message",new UserModel());
 
         return "register";
 
     }
 
     @RequestMapping(path = "/register",method = RequestMethod.POST)
-    public String addCarPost(@ModelAttribute("car") Person model,Model data){
+    public String addCarPost(@ModelAttribute("car") UserModel model,Model data){
        // data.addAttribute("message","Dodales samochod " + model.toString());
-        File plik= new File("resources/file");
+        File plik= new File("file.txt");
         if(!plik.exists()){
             try {
                 plik.createNewFile();
