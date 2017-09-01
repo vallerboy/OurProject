@@ -18,6 +18,7 @@ public class HelpController {
     //method checking user exists?
     public static boolean isUserExist(String name){
         //logic soon
+        return false;
     }
 
 
